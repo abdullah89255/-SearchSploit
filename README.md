@@ -217,6 +217,192 @@ cat 50383.py
 
 ---
 
-If you want, I can make you a **SearchSploit Mind Map** showing all commands, options, and workflow visually so you can keep it open during pentesting sessions. That’ll make it easier to remember.
+Got it — you want **lots** of real-world SearchSploit examples so you can see how it works in different pentesting scenarios.
+I’ll give you **15+ hands-on examples** from basic searches to advanced integrations.
 
-Do you want me to make that? It’ll look like a **pentester’s quick-reference chart**.
+---
+
+## **1. Simple Keyword Search**
+
+```bash
+searchsploit apache
+```
+
+Finds all exploits containing “apache” in their title or description.
+
+---
+
+## **2. Multiple Keywords**
+
+```bash
+searchsploit apache 2.4
+```
+
+Search for exploits related to Apache version 2.4.
+
+---
+
+## **3. Exact Match Search**
+
+```bash
+searchsploit -e "Apache 2.4.49"
+```
+
+Finds only entries with exactly `Apache 2.4.49`.
+
+---
+
+## **4. Case-Sensitive Search**
+
+```bash
+searchsploit -c Windows
+```
+
+Matches only “Windows” with a capital W.
+
+---
+
+## **5. Exclude Keywords**
+
+```bash
+searchsploit apache -x java
+```
+
+Find Apache exploits but exclude anything related to Java.
+
+---
+
+## **6. Search and Copy Exploit**
+
+```bash
+searchsploit openssl 1.1.1 -m
+```
+
+Search for exploits related to OpenSSL 1.1.1 and **mirror** (copy) them to the current directory.
+
+---
+
+## **7. View Exploit Code without Copying**
+
+```bash
+searchsploit -x exploits/linux/remote/12345.py
+```
+
+Opens the exploit so you can read its code directly.
+
+---
+
+## **8. Get Local Path to Exploit**
+
+```bash
+searchsploit -p exploits/multiple/remote/12345.txt
+```
+
+Prints the **absolute path** to the exploit file in your system.
+
+---
+
+## **9. Search and Open Web Link**
+
+```bash
+searchsploit -w apache 2.4.49
+```
+
+Gives a clickable link to the Exploit-DB website for that exploit.
+
+---
+
+## **10. Use with Nmap Scan**
+
+```bash
+nmap -sV target.com -oX scan.xml
+searchsploit --nmap scan.xml
+```
+
+Parses service versions from an **Nmap XML** file and looks up matching exploits automatically.
+
+---
+
+## **11. Search by EDB-ID**
+
+If you know the **Exploit-DB ID**:
+
+```bash
+searchsploit 50383
+```
+
+This finds the exact exploit for Apache 2.4.49 Path Traversal.
+
+---
+
+## **12. Search in Titles Only**
+
+```bash
+searchsploit -t wordpress
+```
+
+Finds only exploits with “wordpress” in the **title**.
+
+---
+
+## **13. Update Database**
+
+```bash
+searchsploit -u
+```
+
+Fetches the latest exploits from Exploit-DB.
+
+---
+
+## **14. Save Results to a File**
+
+```bash
+searchsploit mysql > mysql_exploits.txt
+```
+
+Saves all MySQL exploit results to a text file.
+
+---
+
+## **15. Combine Search and Web Output**
+
+```bash
+searchsploit -w -t "Drupal 8.8"
+```
+
+Shows only titles containing “Drupal 8.8” and gives their web links.
+
+---
+
+## **16. Find Exploits for Specific OS**
+
+```bash
+searchsploit windows 10 local
+```
+
+Search for local privilege escalation exploits for Windows 10.
+
+---
+
+## **17. Search by Vulnerability Type**
+
+```bash
+searchsploit "SQL injection"
+```
+
+Find all exploits related to SQLi vulnerabilities.
+
+---
+
+## **18. Find WordPress Plugin Exploits**
+
+```bash
+searchsploit "WordPress plugin" -t
+```
+
+Lists only plugin-related vulnerabilities in WordPress.
+
+---
+
+
